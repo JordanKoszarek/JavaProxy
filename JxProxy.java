@@ -15,27 +15,27 @@ import java.util.zip.GZIPInputStream;
 
 public class JxProxy extends Thread {
 	//statics
-	public static int 				myOutPort 				= 80;
+	public static int myOutPort = 80;
 	//ints
-	private int 					myBytesRead 			= 0;
-	private	int 					myPort 					= 6601;
-	private	int 					mySize 					= 1024*8;
+	private int myBytesRead = 0;
+	private int myPort = 6601;
+	private int mySize = 1024*8;
 	//url
-	private							URL myURL 				= null;
+	private URL myURL = null;
 	
 	//sockets and streams
-	private 	ServerSocket 		myServerSocket 			= null;
-	private 	Socket 				servSock 				= null;
-	private 	InputStream 		in 						= null;
-	private 	OutputStream 		out 					= null;
-	private		Socket 				myClientSock 			= null;
+	private ServerSocket 	myServerSocket = null;
+	private Socket servSock = null;
+	private InputStream in = null;
+	private OutputStream 	out = null;
+	private Socket myClientSock = null;
 	//file
-	private 	PrintWriter 		myFile 					= null;
+	private PrintWriter myFile = null;
 	// bools
-	private boolean 				isAlive 				= false;
-	private boolean 				isChunked 				= false;
+	private boolean isAlive = false;
+	private boolean isChunked = false;
 	//string
-	String 							myheader			 	= null;
+	String myheader	= null;
 
 	public JxProxy(Socket aClient, ServerSocket aServerSock,PrintWriter aFile) throws IOException {
 		myClientSock = aClient;
